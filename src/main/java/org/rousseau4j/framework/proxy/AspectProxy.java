@@ -1,13 +1,13 @@
 package org.rousseau4j.framework.proxy;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Method;
 
 /**
  * Created by ZhouHangqi on 2017/12/17.
  */
-@Log4j
+@Slf4j
 public abstract class AspectProxy implements Proxy{
 
     @Override
@@ -28,7 +28,6 @@ public abstract class AspectProxy implements Proxy{
                 result = proxyChain.doProxyChain();
             }
         } catch (Throwable throwable) {
-            throwable.printStackTrace();
             log.error("proxy failure", throwable);
             error(cls, method, params, throwable);
         } finally {

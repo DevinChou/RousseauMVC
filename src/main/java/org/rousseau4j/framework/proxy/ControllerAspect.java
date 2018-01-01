@@ -1,6 +1,7 @@
 package org.rousseau4j.framework.proxy;
 
 import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.rousseau4j.framework.annotation.Aspect;
 import org.rousseau4j.framework.annotation.Controller;
 
@@ -9,8 +10,8 @@ import java.lang.reflect.Method;
 /**
  * Created by ZhouHangqi on 2017/12/17.
  */
+@Slf4j
 @Aspect(Controller.class)
-@Log4j
 public class ControllerAspect extends DefaultAspectProxy {
 
     private long begin;

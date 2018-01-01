@@ -21,7 +21,7 @@ public final class ConfigHelper {
         return PropertiesUtil.getString(CONFIG_PROPS, ConfigConstant.JDBC_URL);
     }
 
-    public static String getJdbcUsernames() {
+    public static String getJdbcUsername() {
         return PropertiesUtil.getString(CONFIG_PROPS, ConfigConstant.JDBC_USERNAME);
     }
 

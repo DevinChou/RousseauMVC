@@ -1,6 +1,7 @@
 package org.rousseau4j.framework.util;
 
 import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
@@ -18,7 +19,7 @@ import java.util.jar.JarFile;
  * 类加载工具
  * Created by ZhouHangqi on 2017/7/25.
  */
-@Log4j
+@Slf4j
 public final class ClassLoadUtil {
 
     private static ClassLoader getClassLoader() {
@@ -30,7 +31,7 @@ public final class ClassLoadUtil {
         try {
             cls = Class.forName(className, isInitialize, getClassLoader());
         } catch (ClassNotFoundException e) {
-            log.error("load class failure", e);
+            log.error("load class failure, className={}", className, e);
             throw new RuntimeException(e);
         }
         return cls;
@@ -66,7 +67,7 @@ public final class ClassLoadUtil {
                 }
             }
         } catch (IOException e) {
-            log.error("get classSet failure", e);
+            log.error("get classSet failure, packageName={}", packageName, e);
             throw new RuntimeException(e);
         }
         return classSet;

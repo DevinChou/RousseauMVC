@@ -1,6 +1,6 @@
 package org.rousseau4j.framework.util;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -8,7 +8,7 @@ import java.net.URLEncoder;
 /**
  * Created by ZhouHangqi on 2017/7/31.
  */
-@Log4j
+@Slf4j
 public class CodecUtil {
 
     /**
